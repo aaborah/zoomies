@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#004aad">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Zoomies and Purrs NYC - Professional Pet Sitting Services</title>
+    <link rel="icon" type="image/png" href="Logo/Logo_zoomies.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="Logo/Logo_zoomies.png" alt="Zoomies and Purrs NYC" class="logo-image">
+                    <span class="logo-text">Zoomies and Purrs NYC</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#contact" class="btn-book-nav">Book Now</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Gallery -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Pet's Home Away From Home</h1>
+                <p class="hero-subtitle">Professional, loving pet care while you're away. Your furry friends deserve the best!</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Book Now</a>
+                    <a href="#services" class="btn btn-secondary">Our Services</a>
+                </div>
+            </div>
+        </div>
+        <!-- Gallery Carousel -->
+        <div class="hero-gallery">
+            <div class="gallery-grid">
+                <div class="gallery-track" id="galleryTrack">
+                    <!-- Images will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive care tailored to your pet's needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">In-Home Pet Sitting</h3>
+                    <p class="service-description">Your pets stay comfortable in their own home while you're away. We provide feeding, playtime, and companionship.</p>
+                    <ul class="service-features">
+                        <li>✓ Multiple daily visits</li>
+                        <li>✓ Feeding & fresh water</li>
+                        <li>✓ Playtime & exercise</li>
+                        <li>✓ Medication administration</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚶</div>
+                    <h3 class="service-title">Dog Walking</h3>
+                    <p class="service-description">Regular walks to keep your dog healthy, happy, and well-exercised throughout the day.</p>
+                    <ul class="service-features">
+                        <li>✓ 30-60 minute walks</li>
+                        <li>✓ Flexible scheduling</li>
+                        <li>✓ Group or solo walks</li>
+                        <li>✓ Photo updates</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌙</div>
+                    <h3 class="service-title">Overnight Care</h3>
+                    <p class="service-description">24-hour care with overnight stays to ensure your pets are never alone.</p>
+                    <ul class="service-features">
+                        <li>✓ Full overnight stay</li>
+                        <li>✓ Evening & morning care</li>
+                        <li>✓ Security presence</li>
+                        <li>✓ Emergency support</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💊</div>
+                    <h3 class="service-title">Special Needs Care</h3>
+                    <p class="service-description">Specialized care for pets with medical conditions or special requirements.</p>
+                    <ul class="service-features">
+                        <li>✓ Medication management</li>
+                        <li>✓ Senior pet care</li>
+                        <li>✓ Post-surgery care</li>
+                        <li>✓ Dietary restrictions</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🐱</div>
+                    <h3 class="service-title">Cat Care</h3>
+                    <p class="service-description">Specialized attention for your feline friends, respecting their unique personalities.</p>
+                    <ul class="service-features">
+                        <li>✓ Litter box maintenance</li>
+                        <li>✓ Interactive play</li>
+                        <li>✓ Grooming & brushing</li>
+                        <li>✓ Lots of cuddles</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📸</div>
+                    <h3 class="service-title">Daily Updates</h3>
+                    <p class="service-description">Stay connected with your pets through photos and detailed updates after each visit.</p>
+                    <ul class="service-features">
+                        <li>✓ Photo & video updates</li>
+                        <li>✓ Visit reports</li>
+                        <li>✓ Text notifications</li>
+                        <li>✓ 24/7 communication</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Pet Parents Say</h2>
+                <p class="section-subtitle">Don't just take our word for it</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Absolutely wonderful service! Our golden retriever Max loves his daily walks and we get the cutest photos. We finally found someone we can trust completely."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👤</div>
+                        <div class="author-info">
+                            <h4 class="author-name">Sarah Johnson</h4>
+                            <p class="author-pet">Owner of Max, Golden Retriever</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Our cats are very picky about people, but they absolutely adore their sitter! The daily updates give us so much peace of mind when we travel. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👤</div>
+                        <div class="author-info">
+                            <h4 class="author-name">Michael Chen</h4>
+                            <p class="author-pet">Owner of Luna & Shadow, Cats</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Professional, reliable, and truly caring. They handled Bella's medication schedule perfectly and she was so happy when we got home. This is the only service we'll use!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👤</div>
+                        <div class="author-info">
+                            <h4 class="author-name">Emma Rodriguez</h4>
+                            <p class="author-pet">Owner of Bella, Senior Labrador</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"We were nervous leaving our puppy for the first time, but the overnight care was exceptional. Constant updates, and Charlie seemed even happier than usual! Worth every penny."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👤</div>
+                        <div class="author-info">
+                            <h4 class="author-name">David & Lisa Brown</h4>
+                            <p class="author-pet">Owners of Charlie, Beagle Puppy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Amazing with multiple pets! They handle our two dogs and cat effortlessly. The house is always tidy and the pets are calm and happy. Couldn't ask for better care!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👤</div>
+                        <div class="author-info">
+                            <h4 class="author-name">Jennifer Martinez</h4>
+                            <p class="author-pet">Owner of Rocky, Daisy & Mittens</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"As a frequent traveler, I needed someone dependable. They've never missed a visit and go above and beyond every time. My dog Buddy is always excited to see them!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👤</div>
+                        <div class="author-info">
+                            <h4 class="author-name">Robert Williams</h4>
+                            <p class="author-pet">Owner of Buddy, German Shepherd</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="show-more-container">
+                <button class="btn-show-more" id="showMoreBtn" onclick="showMoreTestimonials()">Show More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to give your pet the best care? Contact us today!</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-details">
+                            <h3>Text Us</h3>
+                            <a href="sms:+16467839114" class="contact-action-btn">
+                                <span class="contact-number">(646) 783-9114</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                            <p class="contact-note">Tap to message us</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:zoomiesandpurrs.nyc@gmail.com" class="contact-action-btn">
+                                <span class="contact-email">zoomiesandpurrs.nyc@gmail.com</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                            <p class="contact-note">Tap to send email</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Service Area</h3>
+                            <p>New York City</p>
+                            <p class="contact-note">Serving all 5 boroughs</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-details">
+                            <h3>Hours</h3>
+                            <p>Monday - Sunday</p>
+                            <p class="contact-note">Flexible scheduling available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="Logo/Logo_zoomies.png" alt="Zoomies and Purrs NYC" class="footer-logo-image">
+                        <span class="logo-text">Zoomies and Purrs NYC</span>
+                    </div>
+                    <p class="footer-description">Professional pet sitting services with love and care. Your pet's happiness is our priority.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Pet Sitting</a></li>
+                        <li><a href="#services">Dog Walking</a></li>
+                        <li><a href="#services">Overnight Care</a></li>
+                        <li><a href="#services">Special Needs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>💬 (646) 783-9114</li>
+                        <li>📧 zoomiesandpurrs.nyc@gmail.com</li>
+                        <li>📍 New York City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zoomies and Purrs NYC. All rights reserved. | Made with ❤️ for pets</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

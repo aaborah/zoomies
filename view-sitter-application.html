@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitter Application - Zoomies and Purrs NYC</title>
+    <link rel="icon" type="image/png" href="Logo/Logo_zoomies.png">
+    <link rel="stylesheet" href="view-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="view-container">
+        <!-- Header -->
+        <header class="view-header">
+            <div class="logo-section">
+                <img src="Logo/Logo_zoomies.png" alt="Zoomies and Purrs NYC" class="view-logo">
+                <h1>Sitter Application Details</h1>
+            </div>
+        </header>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="loading-state">
+            <div class="spinner"></div>
+            <p>Loading application...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="errorState" class="error-state" style="display: none;">
+            <div class="error-icon">⚠️</div>
+            <h2>Application Not Found</h2>
+            <p>The application you're looking for doesn't exist or has been removed.</p>
+            <p class="error-details">Please check the application ID and try again.</p>
+        </div>
+
+        <!-- Application Content -->
+        <div id="applicationContent" class="application-content" style="display: none;">
+            <!-- Quick Reference Card -->
+            <div class="quick-ref-card">
+                <h2>📋 Application Summary</h2>
+                <div class="quick-ref-grid">
+                    <div class="quick-ref-item">
+                        <span class="ref-label">Applicant:</span>
+                        <span class="ref-value" id="qr-name">-</span>
+                    </div>
+                    <div class="quick-ref-item">
+                        <span class="ref-label">Phone:</span>
+                        <span class="ref-value" id="qr-phone">-</span>
+                    </div>
+                    <div class="quick-ref-item">
+                        <span class="ref-label">Email:</span>
+                        <span class="ref-value" id="qr-email">-</span>
+                    </div>
+                    <div class="quick-ref-item">
+                        <span class="ref-label">Neighborhood:</span>
+                        <span class="ref-value" id="qr-neighborhood">-</span>
+                    </div>
+                    <div class="quick-ref-item">
+                        <span class="ref-label">Experience:</span>
+                        <span class="ref-value" id="qr-experience">-</span>
+                    </div>
+                    <div class="quick-ref-item">
+                        <span class="ref-label">Submitted:</span>
+                        <span class="ref-value" id="qr-submitted">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1: Basic Information -->
+            <div class="info-section" style="border-left-color: #004aad;">
+                <div class="section-header">
+                    <span class="section-icon">👤</span>
+                    <h2>Basic Information</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Full Name</span>
+                        <span class="info-value" id="fullName">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Phone Number</span>
+                        <span class="info-value" id="phone">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Email Address</span>
+                        <span class="info-value" id="email">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Neighborhood</span>
+                        <span class="info-value" id="neighborhood">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Photo</span>
+                        <span class="info-value" id="photoFileName">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Referred By</span>
+                        <span class="info-value" id="referral">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Availability -->
+            <div class="info-section" style="border-left-color: #00cc66;">
+                <div class="section-header">
+                    <span class="section-icon">📅</span>
+                    <h2>Availability</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item full-width">
+                        <span class="info-label">Days and Hours Available</span>
+                        <span class="info-value" id="daysHours">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Last Minute Requests</span>
+                        <span class="info-value" id="lastMinute">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Overnight Sitting</span>
+                        <span class="info-value" id="overnight">-</span>
+                    </div>
+                    <div class="info-item full-width">
+                        <span class="info-label">Service Preference</span>
+                        <span class="info-value" id="servicePreference">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Experience -->
+            <div class="info-section" style="border-left-color: #ff6b35;">
+                <div class="section-header">
+                    <span class="section-icon">⭐</span>
+                    <h2>Experience & Qualifications</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Years of Experience</span>
+                        <span class="info-value" id="yearsExperience">-</span>
+                    </div>
+                    <div class="info-item full-width">
+                        <span class="info-label">Types of Services Provided</span>
+                        <span class="info-value" id="serviceTypes">-</span>
+                    </div>
+                    <div class="info-item full-width">
+                        <span class="info-label">Species & Breeds Comfortable With</span>
+                        <span class="info-value" id="comfortableWith">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Size Limits</span>
+                        <span class="info-value" id="sizeLimits">-</span>
+                    </div>
+                    <div class="info-item full-width">
+                        <span class="info-label">Experience with Reactive/Nervous Animals</span>
+                        <span class="info-value" id="reactiveAnimals">-</span>
+                    </div>
+                    <div class="info-item full-width">
+                        <span class="info-label">Why They're a Good Fit</span>
+                        <span class="info-value" id="goodFit">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Home Entry Experience</span>
+                        <span class="info-value" id="homeExperience">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Camera Comfort</span>
+                        <span class="info-value" id="cameras">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Update Frequency</span>
+                        <span class="info-value" id="updates">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Application Metadata -->
+            <div class="metadata-section">
+                <p><strong>Application ID:</strong> <code id="applicationId">-</code></p>
+                <p><strong>Submitted:</strong> <span id="submittedAt">-</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="airtable-config.js"></script>
+    <script src="view-sitter-script.js"></script>
+</body>
+</html>
+

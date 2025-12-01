@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitter Application Form - Zoomies and Purrs NYC</title>
+    <link rel="icon" type="image/png" href="Logo/Logo_zoomies.png">
+    <link rel="stylesheet" href="intake-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="intake-container">
+        <!-- Header -->
+        <header class="intake-header">
+            <div class="logo-section">
+                <img src="Logo/Logo_zoomies.png" alt="Zoomies and Purrs NYC" class="intake-logo">
+                <h1>Zoomies & Purrs Pet Care</h1>
+            </div>
+            <p class="intake-subtitle">Sitter/Walker Application Form</p>
+            <p class="intake-description">Thank you for your interest in joining our team! Please take your time filling out this application.</p>
+        </header>
+
+        <!-- Progress Indicator -->
+        <div class="progress-container">
+            <div class="progress-info">
+                <div class="progress-circle" id="progressCircle">
+                    <div class="progress-circle-inner" id="progressPercent">33%</div>
+                </div>
+                <div class="progress-text">
+                    <h3 id="progressTitle">Great start! 🎉</h3>
+                    <p id="progressMessage">Section 1 of 3 - You're doing amazing!</p>
+                </div>
+            </div>
+            <div class="progress-emoji" id="progressEmoji">🐕</div>
+        </div>
+
+        <form id="sitterIntakeForm" class="intake-form">
+            <!-- Section 1: Basic Information -->
+            <div class="form-section active" data-section="1">
+                <div class="section-header">
+                    <span class="section-number">1</span>
+                    <h2 class="section-title">Basic Information</h2>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                        <small class="form-helper">Please enter a valid email address</small>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="neighborhood">Which NYC neighborhood are you based in? *</label>
+                        <select id="neighborhood" name="neighborhood" required>
+                            <option value="">Select a neighborhood</option>
+                            <optgroup label="Brooklyn">
+                                <option value="Bay Ridge">Bay Ridge</option>
+                                <option value="Bedford-Stuyvesant">Bedford-Stuyvesant</option>
+                                <option value="Bensonhurst">Bensonhurst</option>
+                                <option value="Boerum Hill">Boerum Hill</option>
+                                <option value="Borough Park">Borough Park</option>
+                                <option value="Brighton Beach">Brighton Beach</option>
+                                <option value="Brooklyn Heights">Brooklyn Heights</option>
+                                <option value="Bushwick">Bushwick</option>
+                                <option value="Canarsie">Canarsie</option>
+                                <option value="Carroll Gardens">Carroll Gardens</option>
+                                <option value="Clinton Hill">Clinton Hill</option>
+                                <option value="Cobble Hill">Cobble Hill</option>
+                                <option value="Coney Island">Coney Island</option>
+                                <option value="Crown Heights">Crown Heights</option>
+                                <option value="Ditmas Park">Ditmas Park</option>
+                                <option value="Downtown Brooklyn">Downtown Brooklyn</option>
+                                <option value="DUMBO">DUMBO</option>
+                                <option value="Dyker Heights">Dyker Heights</option>
+                                <option value="East Flatbush">East Flatbush</option>
+                                <option value="East New York">East New York</option>
+                                <option value="Flatbush">Flatbush</option>
+                                <option value="Flatlands">Flatlands</option>
+                                <option value="Fort Greene">Fort Greene</option>
+                                <option value="Gowanus">Gowanus</option>
+                                <option value="Gravesend">Gravesend</option>
+                                <option value="Greenpoint">Greenpoint</option>
+                                <option value="Kensington">Kensington</option>
+                                <option value="Midwood">Midwood</option>
+                                <option value="Mill Basin">Mill Basin</option>
+                                <option value="Park Slope">Park Slope</option>
+                                <option value="Prospect Heights">Prospect Heights</option>
+                                <option value="Prospect Lefferts Gardens">Prospect Lefferts Gardens</option>
+                                <option value="Red Hook">Red Hook</option>
+                                <option value="Sheepshead Bay">Sheepshead Bay</option>
+                                <option value="Sunset Park">Sunset Park</option>
+                                <option value="Williamsburg">Williamsburg</option>
+                                <option value="Windsor Terrace">Windsor Terrace</option>
+                            </optgroup>
+                            <optgroup label="Manhattan">
+                                <option value="Battery Park City">Battery Park City</option>
+                                <option value="Carnegie Hill">Carnegie Hill</option>
+                                <option value="Chelsea">Chelsea</option>
+                                <option value="Chinatown">Chinatown</option>
+                                <option value="East Harlem">East Harlem</option>
+                                <option value="East Village">East Village</option>
+                                <option value="Financial District">Financial District</option>
+                                <option value="Flatiron District">Flatiron District</option>
+                                <option value="Gramercy Park">Gramercy Park</option>
+                                <option value="Greenwich Village">Greenwich Village</option>
+                                <option value="Harlem">Harlem</option>
+                                <option value="Hell's Kitchen">Hell's Kitchen</option>
+                                <option value="Hudson Yards">Hudson Yards</option>
+                                <option value="Inwood">Inwood</option>
+                                <option value="Kips Bay">Kips Bay</option>
+                                <option value="Little Italy">Little Italy</option>
+                                <option value="Lower East Side">Lower East Side</option>
+                                <option value="Midtown East">Midtown East</option>
+                                <option value="Midtown West">Midtown West</option>
+                                <option value="Morningside Heights">Morningside Heights</option>
+                                <option value="Murray Hill">Murray Hill</option>
+                                <option value="NoHo">NoHo</option>
+                                <option value="Nolita">Nolita</option>
+                                <option value="Roosevelt Island">Roosevelt Island</option>
+                                <option value="SoHo">SoHo</option>
+                                <option value="Stuyvesant Town">Stuyvesant Town</option>
+                                <option value="Tribeca">Tribeca</option>
+                                <option value="Two Bridges">Two Bridges</option>
+                                <option value="Upper East Side">Upper East Side</option>
+                                <option value="Upper West Side">Upper West Side</option>
+                                <option value="Washington Heights">Washington Heights</option>
+                                <option value="West Village">West Village</option>
+                            </optgroup>
+                            <optgroup label="Queens">
+                                <option value="Astoria">Astoria</option>
+                                <option value="Bayside">Bayside</option>
+                                <option value="Bellerose">Bellerose</option>
+                                <option value="Briarwood">Briarwood</option>
+                                <option value="College Point">College Point</option>
+                                <option value="Corona">Corona</option>
+                                <option value="Douglaston">Douglaston</option>
+                                <option value="Elmhurst">Elmhurst</option>
+                                <option value="Flushing">Flushing</option>
+                                <option value="Forest Hills">Forest Hills</option>
+                                <option value="Fresh Meadows">Fresh Meadows</option>
+                                <option value="Glendale">Glendale</option>
+                                <option value="Howard Beach">Howard Beach</option>
+                                <option value="Jackson Heights">Jackson Heights</option>
+                                <option value="Jamaica">Jamaica</option>
+                                <option value="Jamaica Estates">Jamaica Estates</option>
+                                <option value="Kew Gardens">Kew Gardens</option>
+                                <option value="Long Island City">Long Island City</option>
+                                <option value="Maspeth">Maspeth</option>
+                                <option value="Middle Village">Middle Village</option>
+                                <option value="Ozone Park">Ozone Park</option>
+                                <option value="Rego Park">Rego Park</option>
+                                <option value="Richmond Hill">Richmond Hill</option>
+                                <option value="Ridgewood">Ridgewood</option>
+                                <option value="Rockaway Beach">Rockaway Beach</option>
+                                <option value="Sunnyside">Sunnyside</option>
+                                <option value="Whitestone">Whitestone</option>
+                                <option value="Woodhaven">Woodhaven</option>
+                                <option value="Woodside">Woodside</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="photo">Your Photo *</label>
+                        <input type="file" id="photo" name="photo" accept="image/*" required>
+                        <small class="form-helper">Please upload a clear photo of yourself</small>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="referral">Who referred you?</label>
+                        <input type="text" id="referral" name="referral" placeholder="Optional">
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn-next" onclick="nextSection()">Next Section →</button>
+                </div>
+            </div>
+
+            <!-- Section 2: Availability -->
+            <div class="form-section" data-section="2">
+                <div class="section-header">
+                    <span class="section-number">2</span>
+                    <h2 class="section-title">Availability</h2>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="daysHours">What days and hours are you available? For how long? *</label>
+                        <textarea id="daysHours" name="daysHours" rows="4" required placeholder="Example: Monday-Friday 9am-5pm, available for 3-6 months"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="lastMinute">Can you commit to last minute or same day requests? *</label>
+                        <select id="lastMinute" name="lastMinute" required>
+                            <option value="">Select an option</option>
+                            <option value="yes">Yes, I can accommodate last minute requests</option>
+                            <option value="sometimes">Sometimes, depending on my schedule</option>
+                            <option value="no">No, I prefer advance notice</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="overnight">Are you available for overnight sitting? *</label>
+                        <select id="overnight" name="overnight" required>
+                            <option value="">Select an option</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                            <option value="maybe">Maybe, depending on the circumstances</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="servicePreference">Do you prefer dog walks, cat visits, or both? *</label>
+                        <select id="servicePreference" name="servicePreference" required>
+                            <option value="">Select your preference</option>
+                            <option value="dogs">Dog walks only</option>
+                            <option value="cats">Cat visits only</option>
+                            <option value="both">Both dogs and cats</option>
+                            <option value="nopreference">No preference</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="prevSection()">← Previous</button>
+                    <button type="button" class="btn-next" onclick="nextSection()">Next Section →</button>
+                </div>
+            </div>
+
+            <!-- Section 3: Experience -->
+            <div class="form-section" data-section="3">
+                <div class="section-header">
+                    <span class="section-number">3</span>
+                    <h2 class="section-title">Experience</h2>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="yearsExperience">How many years have you worked with pets professionally? *</label>
+                        <input type="text" id="yearsExperience" name="yearsExperience" required placeholder="Example: 3 years">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="serviceTypes">What types of services have you done? *</label>
+                        <textarea id="serviceTypes" name="serviceTypes" rows="3" required placeholder="Example: Dog walks, drop ins, overnights, medication support, senior pets, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="comfortableWith">What species and breeds are you most comfortable with? *</label>
+                        <textarea id="comfortableWith" name="comfortableWith" rows="3" required placeholder="List the types of pets you're most comfortable caring for"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="sizeLimits">Any size limits? *</label>
+                        <input type="text" id="sizeLimits" name="sizeLimits" required placeholder="Example: only dogs under 60 lb, or 'No size limits'">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="reactiveAnimals">Have you handled reactive or nervous animals before? Describe your approach. You can keep it short. *</label>
+                        <textarea id="reactiveAnimals" name="reactiveAnimals" rows="4" required placeholder="Share your experience and approach with reactive or nervous pets"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="goodFit">What makes you a good fit for a gentle, trustworthy pet care service? *</label>
+                        <textarea id="goodFit" name="goodFit" rows="4" required placeholder="Tell us what makes you special"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="homeExperience">Do you have experience entering clients' homes? *</label>
+                        <select id="homeExperience" name="homeExperience" required>
+                            <option value="">Select an option</option>
+                            <option value="yes">Yes, extensive experience</option>
+                            <option value="some">Some experience</option>
+                            <option value="no">No, but I'm comfortable with it</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="cameras">Are you comfortable being recorded by indoor cameras if the client has one? *</label>
+                        <select id="cameras" name="cameras" required>
+                            <option value="">Select an option</option>
+                            <option value="yes">Yes, absolutely</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="updates">Are you comfortable sending real time updates, photos, or videos during or after visits? *</label>
+                        <select id="updates" name="updates" required>
+                            <option value="">Select an option</option>
+                            <option value="yes">Yes, I love sharing updates!</option>
+                            <option value="sometimes">Sometimes, if requested</option>
+                            <option value="after">I prefer to send updates after visits</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="prevSection()">← Previous</button>
+                    <button type="submit" class="btn-submit">Submit Application 🎉</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Success Message (Hidden by default) -->
+        <div class="success-message" id="successMessage">
+            <div class="success-icon">✓</div>
+            <h2>Application Submitted Successfully!</h2>
+            <p>Thank you for applying to join the Zoomies & Purrs team!</p>
+            <p class="success-details">We've received your application and will review it carefully. We'll be in touch soon!</p>
+            <a href="index.html" class="btn-home">Return to Homepage</a>
+        </div>
+    </div>
+
+    <script src="airtable-config.js"></script>
+    <script src="sitter-intake-script.js"></script>
+</body>
+</html>
+

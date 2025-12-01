@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care Information - Zoomies and Purrs NYC</title>
+    <link rel="icon" type="image/png" href="Logo/Logo_zoomies.png">
+    <link rel="stylesheet" href="view-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="view-container" id="viewContainer">
+        <!-- Header -->
+        <header class="view-header">
+            <div class="header-top">
+                <div class="logo-section">
+                    <img src="Logo/Logo_zoomies.png" alt="Zoomies and Purrs NYC" class="view-logo">
+                    <div>
+                        <h1>Zoomies & Purrs Pet Care</h1>
+                        <p class="subtitle">Pet Care Information Sheet</p>
+                    </div>
+                </div>
+                <button onclick="window.print()" class="btn-print">🖨️ Print</button>
+            </div>
+        </header>
+
+        <!-- Loading State -->
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <p>Loading pet information...</p>
+        </div>
+
+        <!-- Error State -->
+        <div class="error-state" id="errorState" style="display: none;">
+            <div class="error-icon">⚠️</div>
+            <h2>Information Not Found</h2>
+            <p>We couldn't find the pet information you're looking for.</p>
+            <p class="error-detail">Please check that you have the correct link from the pet owner.</p>
+        </div>
+
+        <!-- Pet Information Content -->
+        <div class="pet-info-content" id="petInfoContent" style="display: none;">
+            <!-- Quick Reference Card -->
+            <div class="quick-ref-card">
+                <h2>🐾 Quick Reference</h2>
+                <div class="quick-ref-grid">
+                    <div class="quick-item">
+                        <span class="label">Pet Name:</span>
+                        <span class="value" id="qr-petName">-</span>
+                    </div>
+                    <div class="quick-item">
+                        <span class="label">Owner:</span>
+                        <span class="value" id="qr-parentName">-</span>
+                    </div>
+                    <div class="quick-item">
+                        <span class="label">Owner Phone:</span>
+                        <span class="value" id="qr-phone">-</span>
+                    </div>
+                    <div class="quick-item">
+                        <span class="label">Emergency:</span>
+                        <span class="value" id="qr-emergency">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1: Pet Parent Information -->
+            <div class="info-section">
+                <div class="section-header-view">
+                    <span class="section-icon">👤</span>
+                    <h2>Pet Parent Information</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item"><strong>Name:</strong> <span id="parentName">-</span></div>
+                    <div class="info-item"><strong>Phone:</strong> <span id="phone">-</span></div>
+                    <div class="info-item"><strong>Email:</strong> <span id="email">-</span></div>
+                    <div class="info-item full"><strong>Address:</strong> <span id="address">-</span></div>
+                    <div class="info-item"><strong>Emergency Contact:</strong> <span id="emergencyName">-</span></div>
+                    <div class="info-item"><strong>Emergency Phone:</strong> <span id="emergencyPhone">-</span></div>
+                </div>
+            </div>
+
+            <!-- Section 2: Service Details -->
+            <div class="info-section">
+                <div class="section-header-view">
+                    <span class="section-icon">📅</span>
+                    <h2>Service Requested</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item full"><strong>Services:</strong> <span id="serviceTypes">-</span></div>
+                    <div class="info-item full"><strong>Dates & Times:</strong> <span id="preferredDates">-</span></div>
+                </div>
+            </div>
+
+            <!-- Section 3: Pet Information -->
+            <div class="info-section highlight">
+                <div class="section-header-view">
+                    <span class="section-icon">🐕</span>
+                    <h2>Pet Information</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item"><strong>Name:</strong> <span id="petName">-</span></div>
+                    <div class="info-item"><strong>Species:</strong> <span id="species">-</span></div>
+                    <div class="info-item"><strong>Breed:</strong> <span id="breed">-</span></div>
+                    <div class="info-item"><strong>Age:</strong> <span id="age">-</span></div>
+                    <div class="info-item"><strong>Sex:</strong> <span id="sex">-</span></div>
+                    <div class="info-item"><strong>Spayed/Neutered:</strong> <span id="spayedNeutered">-</span></div>
+                    <div class="info-item"><strong>Microchipped:</strong> <span id="microchipped">-</span></div>
+                </div>
+            </div>
+
+            <!-- Section 4: Personality -->
+            <div class="info-section">
+                <div class="section-header-view">
+                    <span class="section-icon">❤️</span>
+                    <h2>Personality and Behavior</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item full"><strong>Temperament:</strong> <span id="temperament">-</span></div>
+                    <div class="info-item"><strong>Friendly with people:</strong> <span id="friendlyWithPeople">-</span></div>
+                    <div class="info-item"><strong>Reaction to loud noises:</strong> <span id="loudNoises">-</span></div>
+                    <div class="info-item full"><strong>Triggers/Fears:</strong> <span id="triggers">-</span></div>
+                    <div class="info-item"><strong>Good with animals:</strong> <span id="goodWithAnimals">-</span></div>
+                    <div class="info-item"><strong>Animals to avoid:</strong> <span id="animalConflicts">-</span></div>
+                    <div class="info-item full alert"><strong>Resource guarding:</strong> <span id="resourceGuarding">-</span></div>
+                    <div class="info-item full alert"><strong>Aggression history:</strong> <span id="aggression">-</span></div>
+                    <div class="info-item full"><strong>Separation anxiety:</strong> <span id="separationAnxiety">-</span></div>
+                    <div class="info-item full"><strong>Favorite toys/comfort items:</strong> <span id="favoriteToys">-</span></div>
+                </div>
+            </div>
+
+            <!-- Section 5: Daily Routine -->
+            <div class="info-section highlight">
+                <div class="section-header-view">
+                    <span class="section-icon">⏰</span>
+                    <h2>Daily Routine</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item full"><strong>Feeding schedule:</strong> <span id="feedingSchedule">-</span></div>
+                    <div class="info-item full"><strong>Food location:</strong> <span id="foodLocation">-</span></div>
+                    <div class="info-item full"><strong>Treats:</strong> <span id="treats">-</span></div>
+                    <div class="info-item full"><strong>Potty routine:</strong> <span id="pottyRoutine">-</span></div>
+                    <div class="info-item full"><strong>Walking route (dogs):</strong> <span id="walkingRoute">-</span></div>
+                    <div class="info-item full"><strong>Litter box (cats):</strong> <span id="litterBox">-</span></div>
+                    <div class="info-item"><strong>Exercise schedule:</strong> <span id="exerciseSchedule">-</span></div>
+                    <div class="info-item"><strong>Off-leash indoors:</strong> <span id="offLeashIndoor">-</span></div>
+                    <div class="info-item full"><strong>Commands known:</strong> <span id="commands">-</span></div>
+                    <div class="info-item full"><strong>Stress soothers:</strong> <span id="stressSoothers">-</span></div>
+                </div>
+            </div>
+
+            <!-- Section 6: Medical Information -->
+            <div class="info-section alert-section">
+                <div class="section-header-view">
+                    <span class="section-icon">🏥</span>
+                    <h2>Medical Information - IMPORTANT</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item"><strong>Vet Name:</strong> <span id="vetName">-</span></div>
+                    <div class="info-item"><strong>Vet Phone:</strong> <span id="vetPhone">-</span></div>
+                    <div class="info-item full alert"><strong>Medications:</strong> <span id="medications">-</span></div>
+                    <div class="info-item full alert"><strong>Allergies:</strong> <span id="allergies">-</span></div>
+                    <div class="info-item full"><strong>Chronic conditions:</strong> <span id="conditions">-</span></div>
+                    <div class="info-item"><strong>Vaccines up to date:</strong> <span id="vaccines">-</span></div>
+                    <div class="info-item"><strong>Emergency vet authorization:</strong> <span id="emergencyAuth">-</span></div>
+                    <div class="info-item full"><strong>Quirks to monitor:</strong> <span id="quirks">-</span></div>
+                </div>
+            </div>
+
+            <!-- Section 7: Home Access -->
+            <div class="info-section">
+                <div class="section-header-view">
+                    <span class="section-icon">🏠</span>
+                    <h2>Home & Access Information</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item full"><strong>How to enter:</strong> <span id="homeEntry">-</span></div>
+                    <div class="info-item full"><strong>Alarm code/instructions:</strong> <span id="alarmCode">-</span></div>
+                    <div class="info-item"><strong>Security cameras:</strong> <span id="cameras">-</span></div>
+                    <div class="info-item"><strong>Camera locations:</strong> <span id="cameraLocations">-</span></div>
+                    <div class="info-item full"><strong>Off-limits rooms:</strong> <span id="offLimitsRooms">-</span></div>
+                    <div class="info-item full"><strong>WiFi:</strong> <span id="wifi">-</span></div>
+                    <div class="info-item"><strong>Waste disposal:</strong> <span id="wasteDisposal">-</span></div>
+                    <div class="info-item"><strong>Cleaning equipment:</strong> <span id="cleaningEquipment">-</span></div>
+                </div>
+            </div>
+
+            <!-- Section 8: Supplies -->
+            <div class="info-section">
+                <div class="section-header-view">
+                    <span class="section-icon">🎒</span>
+                    <h2>Supplies Provided</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item full"><strong>Food amount:</strong> <span id="foodAmount">-</span></div>
+                    <div class="info-item"><strong>Treat supplies:</strong> <span id="treatSupplies">-</span></div>
+                    <div class="info-item"><strong>Litter/pee pads:</strong> <span id="litterPads">-</span></div>
+                    <div class="info-item"><strong>Cleaning supplies:</strong> <span id="cleaningSupplies">-</span></div>
+                    <div class="info-item"><strong>Leash/harness:</strong> <span id="leashHarness">-</span></div>
+                    <div class="info-item full"><strong>Special tools:</strong> <span id="specialTools">-</span></div>
+                    <div class="info-item"><strong>Notify when low:</strong> <span id="lowSupplyNotify">-</span></div>
+                </div>
+            </div>
+
+            <!-- Section 9: Additional Preferences -->
+            <div class="info-section">
+                <div class="section-header-view">
+                    <span class="section-icon">⭐</span>
+                    <h2>Additional Preferences</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item"><strong>Update frequency:</strong> <span id="updateFrequency">-</span></div>
+                    <div class="info-item"><strong>Preferred platform:</strong> <span id="commPlatform">-</span></div>
+                    <div class="info-item"><strong>Potty area preference:</strong> <span id="nearbyPotty">-</span></div>
+                    <div class="info-item"><strong>Weather walks:</strong> <span id="weatherWalks">-</span></div>
+                    <div class="info-item full"><strong>Hiding spots (cats):</strong> <span id="hidingSpots">-</span></div>
+                    <div class="info-item full"><strong>Household routines:</strong> <span id="householdRoutines">-</span></div>
+                    <div class="info-item full"><strong>Cultural preferences:</strong> <span id="culturalPreferences">-</span></div>
+                    <div class="info-item full"><strong>Additional notes:</strong> <span id="additionalInfo">-</span></div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="view-footer">
+                <p><strong>Important:</strong> This information is confidential and for authorized pet care providers only.</p>
+                <p>Generated: <span id="timestamp">-</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="airtable-config.js"></script>
+    <script src="view-script.js"></script>
+</body>
+</html>
+

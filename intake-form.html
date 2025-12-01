@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Intake Form - Zoomies and Purrs NYC</title>
+    <link rel="icon" type="image/png" href="Logo/Logo_zoomies.png">
+    <link rel="stylesheet" href="intake-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="intake-container">
+        <!-- Header -->
+        <header class="intake-header">
+            <div class="logo-section">
+                <img src="Logo/Logo_zoomies.png" alt="Zoomies and Purrs NYC" class="intake-logo">
+                <h1>Zoomies & Purrs Pet Care</h1>
+            </div>
+            <p class="intake-subtitle">Client Intake Questionnaire</p>
+            <p class="intake-description">Please take your time filling out this form. This information helps us provide the best care for your furry friend!</p>
+        </header>
+
+        <!-- Progress Indicator -->
+        <div class="progress-container">
+            <div class="progress-info">
+                <div class="progress-circle" id="progressCircle">
+                    <div class="progress-circle-inner" id="progressPercent">11%</div>
+                </div>
+                <div class="progress-text">
+                    <h3 id="progressTitle">Great start! 🎉</h3>
+                    <p id="progressMessage">Section 1 of 9 - You're doing amazing!</p>
+                </div>
+            </div>
+            <div class="progress-emoji" id="progressEmoji">🐕</div>
+        </div>
+
+        <form id="intakeForm" class="intake-form">
+            <!-- Section 1: Pet Parent Information -->
+            <div class="form-section active" data-section="1">
+                <div class="section-header">
+                    <span class="section-number">1</span>
+                    <h2 class="section-title">Pet Parent Information</h2>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="parentName">Full Name *</label>
+                        <input type="text" id="parentName" name="parentName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="address">Home Address *</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="emergencyName">Emergency Contact Name *</label>
+                        <input type="text" id="emergencyName" name="emergencyName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="emergencyPhone">Emergency Contact Phone *</label>
+                        <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn-next" onclick="nextSection()">Next Section →</button>
+                </div>
+            </div>
+
+            <!-- Section 2: Service Requested -->
+            <div class="form-section" data-section="2">
+                <div class="section-header">
+                    <span class="section-number">2</span>
+                    <h2 class="section-title">Service Requested</h2>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>Service Type *</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="serviceDogWalking" value="Dog walking">
+                                <span>Dog walking</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="servicePeePad" value="Pee pad visit">
+                                <span>Pee pad visit</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="serviceDropIn" value="Drop in visit">
+                                <span>Drop in visit</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="serviceOvernight" value="Overnight sitting">
+                                <span>Overnight sitting</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="serviceCombination">Combination Service (describe)</label>
+                        <textarea id="serviceCombination" name="serviceCombination" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="preferredDates">Preferred Dates and Times *</label>
+                        <textarea id="preferredDates" name="preferredDates" rows="3" required></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="prevSection()">← Previous</button>
+                    <button type="button" class="btn-next" onclick="nextSection()">Next Section →</button>
+                </div>
+            </div>
+
+            <!-- Section 3: Pet Information -->
+            <div class="form-section" data-section="3">
+                <div class="section-header">
+                    <span class="section-number">3</span>
+                    <h2 class="section-title">Pet Information</h2>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="petName">Pet's Name *</label>
+                        <input type="text" id="petName" name="petName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="species">Species *</label>
+                        <select id="species" name="species" required>
+                            <option value="">Select species</option>
+                            <option value="Dog">Dog</option>
+                            <option value="Cat">Cat</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="breed">Breed *</label>
+                        <input type="text" id="breed" name="breed" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Age *</label>
+                        <input type="text" id="age" name="age" placeholder="e.g., 3 years" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sex">Sex *</label>
+                        <select id="sex" name="sex" required>
+                            <option value="">Select sex</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="spayedNeutered">Spayed/Neutered? *</label>
+                        <select id="spayedNeutered" name="spayedNeutered" required>
+                            <option value="">Select option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="microchipped">Microchipped? *</label>
+                        <select id="microchipped" name="microchipped" required>
+                            <option value="">Select option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="prevSection()">← Previous</button>
+                    <button type="button" class="btn-next" onclick="nextSection()">Next Section →</button>
+                </div>
+            </div>
+
+            <!-- Section 4: Personality and Behavior -->
+            <div class="form-section" data-section="4">
+                <div class="section-header">
+                    <span class="section-number">4</span>
+                    <h2 class="section-title">Personality and Behavior</h2>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="temperament">How would you describe your pet's temperament? *</label>
+                        <textarea id="temperament" name="temperament" rows="2" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="friendlyWithPeople">Friendly with new people? *</label>
+                        <select id="friendlyWithPeople" name="friendlyWithPeople" required>
+                            <option value="">Select option</option>
+                            <option value="Very friendly">Very friendly</option>
+                            <option value="Somewhat friendly">Somewhat friendly</option>
+                            <option value="Shy/Reserved">Shy/Reserved</option>
+                            <option value="Fearful">Fearful</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loudNoises">How do they react to loud noises?</label>
+                        <input type="text" id="loudNoises" name="loudNoises">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="triggers">Any known triggers, fears, or stress behaviors?</label>
+                        <textarea id="triggers" name="triggers" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goodWithAnimals">Good with other animals? *</label>
+                        <select id="goodWithAnimals" name="goodWithAnimals" required>
+                            <option value="">Select option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="Sometimes">Sometimes</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="animalConflicts">Animals they do not get along with?</label>
+                        <input type="text" id="animalConflicts" name="animalConflicts">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="resourceGuarding">Does your pet guard food, toys, or spaces?</label>
+                        <textarea id="resourceGuarding" name="resourceGuarding" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="aggression">Any history of biting, nipping, scratching, or aggression?</label>
+                        <textarea id="aggression" name="aggression" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="separationAnxiety">Any separation anxiety? If yes, what helps?</label>
+                        <textarea id="separationAnxiety" name="separationAnxiety" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="favoriteToys">Favorite toys or comfort items</label>
+                        <input type="text" id="favoriteToys" name="favoriteToys">
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="prevSection()">← Previous</button>
+                    <button type="button" class="btn-next" onclick="nextSection()">Next Section →</button>
+                </div>
+            </div>
+
+            <!-- Section 5: Daily Routine -->
+            <div class="form-section" data-section="5">
+                <div class="section-header">
+                    <span class="section-number">5</span>
+                    <h2 class="section-title">Daily Routine</h2>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="feedingSchedule">Feeding schedule and portions *</label>
+                        <textarea id="feedingSchedule" name="feedingSchedule" rows="2" placeholder="e.g., 8am - 1 cup, 6pm - 1 cup" required></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="foodLocation">Location of food and bowls *</label>
+                        <input type="text" id="foodLocation" name="foodLocation" required>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="treats">Treats allowed? Any restrictions?</label>
+                        <textarea id="treats" name="treats" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="pottyRoutine">Typical potty routine *</label>
+                        <textarea id="pottyRoutine" name="pottyRoutine" rows="2" required></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="walkingRoute">For dogs: preferred walking route or areas to avoid</label>
+                        <textarea id="walkingRoute" name="walkingRoute" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="litterBox">For cats: litter box location and cleaning preferences</label>
+                        <textarea id="litterBox" name="litterBox" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="exerciseSchedule">Exercise schedule</label>
+                        <input type="text" id="exerciseSchedule" name="exerciseSchedule">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="offLeashIndoor">Comfortable with off-leash play indoors?</label>
+                        <select id="offLeashIndoor" name="offLeashIndoor">
+                            <option value="">Select option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="commands">Commands your pet knows</label>
+                        <input type="text" id="commands" name="commands" placeholder="e.g., sit, stay, come">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="stressSoothers">Anything that soothes them during stress</label>
+                        <textarea id="stressSoothers" name="stressSoothers" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="prevSection()">← Previous</button>
+                    <button type="button" class="btn-next" onclick="nextSection()">Next Section →</button>
+                </div>
+            </div>
+
+            <!-- Section 6: Medical Information -->
+            <div class="form-section" data-section="6">
+                <div class="section-header">
+                    <span class="section-number">6</span>
+                    <h2 class="section-title">Medical Information</h2>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="vetName">Vet Name and Clinic *</label>
+                        <input type="text" id="vetName" name="vetName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="vetPhone">Vet Phone Number *</label>
+                        <input type="tel" id="vetPhone" name="vetPhone" required>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="medications">Any medications? Include dosage, schedule, and exact instructions</label>
+                        <textarea id="medications" name="medications" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="allergies">Any allergies?</label>
+                        <textarea id="allergies" name="allergies" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="conditions">Any chronic or past conditions we should watch for?</label>
+                        <textarea id="conditions" name="conditions" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="vaccines">Up to date on vaccines? *</label>
+                        <select id="vaccines" name="vaccines" required>
+                            <option value="">Select option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="Partial">Partial</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="emergencyAuth">Authorize emergency vet care if needed? *</label>
+                        <select id="emergencyAuth" name="emergencyAuth" required>
+                            <option value="">Select option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="quirks">Quirks or small issues we should monitor? (hairballs, sensitive stomach, limping, etc.)</label>
+                        <textarea id="quirks" name="quirks" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="prevSection()">← Previous</button>
+                    <button type="button" class="btn-next" onclick="nextSection()">Next Section →</button>
+                </div>
+            </div>
+
+            <!-- Section 7: Home & Access Information -->
+            <div class="form-section" data-section="7">
+                <div class="section-header">
+                    <span class="section-number">7</span>
+                    <h2 class="section-title">Home & Access Information</h2>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="homeEntry">How will we enter your home? *</label>
+                        <input type="text" id="homeEntry" name="homeEntry" placeholder="e.g., Key, lockbox, doorman" required>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="alarmCode">Alarm code and instructions</label>
+                        <textarea id="alarmCode" name="alarmCode" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cameras">Security cameras inside the home? *</label>
+                        <select id="cameras" name="cameras" required>
+                            <option value="">Select option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cameraLocations">If yes, where are they located?</label>
+                        <input type="text" id="cameraLocations" name="cameraLocations">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="offLimitsRooms">Any rooms that are off limits?</label>
+                        <input type="text" id="offLimitsRooms" name="offLimitsRooms">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="wifi">WiFi info (optional but helpful for overnight stays)</label>
+                        <input type="text" id="wifi" name="wifi" placeholder="Network name and password">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="wasteDisposal">Where should we dispose of waste?</label>
+                        <input type="text" id="wasteDisposal" name="wasteDisposal">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cleaningEquipment">Where is cleaning equipment?</label>
+                        <input type="text" id="cleaningEquipment" name="cleaningEquipment">
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="prevSection()">← Previous</button>
+                    <button type="button" class="btn-next" onclick="nextSection()">Next Section →</button>
+                </div>
+            </div>
+
+            <!-- Section 8: Supplies Provided -->
+            <div class="form-section" data-section="8">
+                <div class="section-header">
+                    <span class="section-number">8</span>
+                    <h2 class="section-title">Supplies Provided by Owner</h2>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="foodAmount">Food amounts provided for the service period *</label>
+                        <textarea id="foodAmount" name="foodAmount" rows="2" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="treatSupplies">Treat supplies</label>
+                        <input type="text" id="treatSupplies" name="treatSupplies">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="litterPads">Litter or pee pads</label>
+                        <input type="text" id="litterPads" name="litterPads">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cleaningSupplies">Cleaning supplies</label>
+                        <input type="text" id="cleaningSupplies" name="cleaningSupplies">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="leashHarness">Leash, harness, collars, or carrier</label>
+                        <input type="text" id="leashHarness" name="leashHarness">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="specialTools">Any special tools (pill pockets, syringes, toothbrush, grooming tools)</label>
+                        <textarea id="specialTools" name="specialTools" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lowSupplyNotify">Notify when supplies run low? *</label>
+                        <select id="lowSupplyNotify" name="lowSupplyNotify" required>
+                            <option value="">Select option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="prevSection()">← Previous</button>
+                    <button type="button" class="btn-next" onclick="nextSection()">Next Section →</button>
+                </div>
+            </div>
+
+            <!-- Section 9: Additional Preferences -->
+            <div class="form-section" data-section="9">
+                <div class="section-header">
+                    <span class="section-number">9</span>
+                    <h2 class="section-title">Additional Preferences</h2>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="updateFrequency">Update frequency *</label>
+                        <select id="updateFrequency" name="updateFrequency" required>
+                            <option value="">Select option</option>
+                            <option value="After each visit">After each visit</option>
+                            <option value="Daily summary">Daily summary</option>
+                            <option value="Only if issues">Only if issues</option>
+                            <option value="Custom">Custom (explain below)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="commPlatform">Preferred communication platform *</label>
+                        <input type="text" id="commPlatform" name="commPlatform" placeholder="e.g., Text, Email, WhatsApp" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nearbyPotty">Take pet to nearby potty area or stay inside?</label>
+                        <select id="nearbyPotty" name="nearbyPotty">
+                            <option value="">Select option</option>
+                            <option value="Nearby potty area">Nearby potty area</option>
+                            <option value="Stay strictly inside">Stay strictly inside</option>
+                            <option value="Either is fine">Either is fine</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="weatherWalks">For dogs: walks in rain or snow?</label>
+                        <select id="weatherWalks" name="weatherWalks">
+                            <option value="">Select option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="Short walks only">Short walks only</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="hidingSpots">For cats: any hiding spots we should know about?</label>
+                        <input type="text" id="hidingSpots" name="hidingSpots">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="householdRoutines">Any household routines? (lights, shades, plants, mail, packages)</label>
+                        <textarea id="householdRoutines" name="householdRoutines" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="culturalPreferences">Any cultural or religious preferences about home entry or shoes?</label>
+                        <textarea id="culturalPreferences" name="culturalPreferences" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="additionalInfo">Anything else you want us to know so your pet feels safe and taken care of?</label>
+                        <textarea id="additionalInfo" name="additionalInfo" rows="3"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="prevSection()">← Previous</button>
+                    <button type="submit" class="btn-submit">Submit Form ✓</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            <div class="success-icon">✓</div>
+            <h2>Thank You!</h2>
+            <p>Your intake form has been submitted successfully. We'll review your information and contact you soon!</p>
+            <a href="index.html" class="btn-home">Return to Homepage</a>
+        </div>
+    </div>
+
+    <script src="airtable-config.js"></script>
+    <script src="intake-script.js"></script>
+</body>
+</html>
+
